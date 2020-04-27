@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>jerrylai@aliyun.com</Authors>
+    <Version>9.31.3</Version>
+    <Company>mycsv.cn</Company>
+    <Copyright>Copyright © mycsv 2018</Copyright>
+    <Product>Afx.Data.MySql.Entity for .NET Standard 2.0</Product>
+    <Description>Afx.Data.MySql.Entity for .NET Standard 2.0</Description>
+    <PackageReleaseNotes>Afx.Data.MySql.Entity for .NET Standard 2.0</PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\publish\</OutputPath>
+    <DocumentationFile>..\..\publish\netstandard2.0\Afx.Data.MySql.Entity.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\Afx.Data.MySql.Entity\MySqlDatabase.cs" Link="MySqlDatabase.cs" />
+    <Compile Include="..\..\src\Afx.Data.MySql.Entity\Schema\MySqlDatabaseSchema.cs" Link="Schema\MySqlDatabaseSchema.cs" />
+    <Compile Include="..\..\src\Afx.Data.MySql.Entity\Schema\MySqlModelSchema.cs" Link="Schema\MySqlModelSchema.cs" />
+    <Compile Include="..\..\src\Afx.Data.MySql.Entity\Schema\MySqlTableSchema.cs" Link="Schema\MySqlTableSchema.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Schema\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Afx.Data" Version="9.0.1" />
+    <PackageReference Include="Afx.Data.Entity" Version="9.31.3" />
+    <PackageReference Include="MySqlConnector" Version="0.64.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+  </ItemGroup>
+</Project>
