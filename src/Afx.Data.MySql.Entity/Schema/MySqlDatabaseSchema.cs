@@ -55,7 +55,7 @@ namespace Afx.Data.MySql.Entity.Schema
         /// <returns>true：存在，false：不存在</returns>
         public override bool Exist()
         {
-            var sql = "SELECT COUNT(1) FROM `information_schema`.`SCHEMATA` WHERE schema_name=?name";
+            var sql = "SELECT COUNT(1) FROM `information_schema`.`SCHEMATA` WHERE schema_name = @name";
             int count = this.db.ExecuteScalar<int>(sql,new { name = this.database });
 
             return count > 0;

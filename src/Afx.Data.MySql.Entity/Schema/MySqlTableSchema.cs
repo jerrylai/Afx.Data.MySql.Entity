@@ -48,7 +48,7 @@ namespace Afx.Data.MySql.Entity.Schema
         /// <returns>数据库所有表名</returns>
         public override List<TableInfoModel> GetTables()
         {
-            List<TableInfoModel> list = db.Query<TableInfoModel>("SELECT table_name `Name`,table_comment `Comment` FROM information_schema.tables tb WHERE tb.table_schema=?database  AND table_type = 'BASE TABLE';",
+            List<TableInfoModel> list = db.Query<TableInfoModel>("SELECT table_name `Name`,table_comment `Comment` FROM information_schema.tables tb WHERE tb.table_schema = @database  AND table_type = 'BASE TABLE';",
                     new { database });
 
             return list;
@@ -411,7 +411,7 @@ IF(col.`COLUMN_KEY`='PRI', 1, 0) `IsKey`,
 IF(col.`EXTRA`='auto_increment', 1,0) `IsAutoIncrement`,
 col.`COLUMN_COMMENT` `Comment`
 FROM information_schema.columns col
-WHERE col.table_schema=?database AND col.table_name=?table;";
+WHERE col.table_schema = @database AND col.table_name = @table;";
 
         private const string SelectTableIndexSql = @"
 SELECT col.`ORDINAL_POSITION` `Order`, 
@@ -419,7 +419,7 @@ IFNULL(statis.`INDEX_NAME`, '') `IndexName`,
 IF(statis.`NON_UNIQUE`=0, 1, 0) `IsUnique`
 FROM information_schema.columns col
 INNER JOIN information_schema.statistics statis ON col.`TABLE_SCHEMA`=statis.`TABLE_SCHEMA` AND col.`TABLE_NAME`=statis.`TABLE_NAME` AND col.`COLUMN_NAME`=statis.`COLUMN_NAME`
-WHERE col.table_schema=?database AND col.table_name=?table AND statis.`INDEX_NAME` <> 'PRIMARY';";
+WHERE col.table_schema = @database AND col.table_name = @table AND statis.`INDEX_NAME` <> 'PRIMARY';";
     }
 
     public class MysqlTableIndexInfoModel
