@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>jerrylai@aliyun.com</Authors>
     <Version>13.2.2</Version>
     <Company>mycsv.cn</Company>
@@ -31,7 +31,7 @@
   <ItemGroup>
     <PackageReference Include="Afx.Data" Version="10.1.0" />
     <PackageReference Include="Afx.Data.Entity" Version="13.2.2" />
-    <PackageReference Include="MySqlConnector" Version="0.69.10" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+    <PackageReference Include="MySqlConnector" Version="1.2.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0-alpha.2" />
   </ItemGroup>
 </Project>

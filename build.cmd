@@ -3,7 +3,8 @@ set Build="%SYSTEMDRIVE%\Program Files (x86)\Microsoft Visual Studio\2019\Enterp
 if exist publish rd /s /q publish
 %Build% "NET40/Afx.Data.MySql.Entity/Afx.Data.MySql.Entity.csproj" /t:Rebuild /p:Configuration=Release
 %Build% "NET452/Afx.Data.MySql.Entity/Afx.Data.MySql.Entity.csproj" /t:Rebuild /p:Configuration=Release
-dotnet build "NETStandard2.0/Afx.Data.MySql.Entity/Afx.Data.MySql.Entity.csproj" -c Release 
+dotnet build "NETStandard2.0/Afx.Data.MySql.Entity/Afx.Data.MySql.Entity.csproj" -c Release
+dotnet build "NETStandard2.1/Afx.Data.MySql.Entity/Afx.Data.MySql.Entity.csproj" -c Release
 cd publish
 del /q/s *.pdb
 del /q/s EntityFramework*
