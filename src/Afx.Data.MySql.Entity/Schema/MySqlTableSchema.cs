@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+#if NETStandard_2_1
+using MySqlConnector;
+#else
 using MySql.Data.MySqlClient;
+#endif
 using Afx.Data;
 using System.Data;
 using Afx.Data.Entity.Schema;

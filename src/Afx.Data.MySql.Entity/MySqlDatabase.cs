@@ -3,8 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+#if NETStandard_2_1
+using MySqlConnector;
+#else
 using MySql.Data.MySqlClient;
+#endif
 using System.Data.Common;
 
 namespace Afx.Data.MySql
@@ -19,7 +22,11 @@ namespace Afx.Data.MySql
         /// </summary>
         /// <param name="connectionString">连接字符串</param>
         public MySqlDatabase(string connectionString)
+#if NETStandard_2_1
+             : base(connectionString, MySqlConnectorFactory.Instance)
+#else
             : base(connectionString, MySqlClientFactory.Instance)
+#endif
         {
         }
 
