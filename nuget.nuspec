@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Afx.Data.MySql.Entity</id>
-    <version>13.2.5</version>
+    <version>13.3.1</version>
     <authors>jerrylai</authors>
     <owners>jerrylai</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,21 +11,15 @@
     <copyright>jerrylai@aliyun.com</copyright>
     <tags>MySql EF EFCore</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.0">
-        <dependency id="Afx.Data.Entity" version="13.2.5" />
-        <dependency id="Afx.Data" version="10.1.0" />
-        <dependency id="MySql.Data" version="6.9.12" />
-        <dependency id="MySql.Data.Entity" version="6.9.12" />
-      </group>
       <group targetFramework=".NETFramework4.5.2">
-        <dependency id="Afx.Data.Entity" version="13.2.5" />
-        <dependency id="Afx.Data" version="10.1.0" />
-        <dependency id="MySql.Data" version="6.10.9" />
-        <dependency id="MySql.Data.Entity" version="6.10.9" />
+        <dependency id="Afx.Data.Entity" version="13.3.1" />
+        <dependency id="Afx.Data" version="10.2.0" />
+        <dependency id="MySql.Data" version="8.0.28" />
+        <dependency id="MySql.Data.EntityFramework" version="8.0.28" />
       </group>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="Afx.Data.Entity" version="13.2.5" />
-        <dependency id="Afx.Data" version="10.1.0" />
+        <dependency id="Afx.Data.Entity" version="13.3.1" />
+        <dependency id="Afx.Data" version="10.2.0" />
         <dependency id="MySqlConnector" version="0.69.10" />
         <dependency id="Pomelo.EntityFrameworkCore.MySql" version="3.2.6" />
       </group>
